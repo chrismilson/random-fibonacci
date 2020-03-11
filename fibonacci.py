@@ -31,4 +31,3 @@ class Random:
       current += 1
     
     return self._memo[index]
-
