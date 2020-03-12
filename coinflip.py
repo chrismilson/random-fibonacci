@@ -1,9 +1,10 @@
 import random
 
-def coinflip(probabilityOfHeads: float = .5):
-  """Flip a coin (fair by default)
+def coinflip(probabilityOfHeads: float = .5) -> bool:
+  """Flip a (fair by default) coin.
 
-  Returns a boolean where true represents heads.
+  Returns:
+    bool: true for heads, false for tails.
   """
   return random.uniform(0, 1) < probabilityOfHeads
 
