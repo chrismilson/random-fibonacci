@@ -1,5 +1,3 @@
-from coinflip import coinflip
-
 class Relation:
   """A recurrence relation based sequence
   
@@ -24,29 +22,3 @@ class Relation:
       self._memo.append(self._next(target))
 
     return self._memo[index]
-
-class Original(Relation):
-  """The original fibonacci sequence."""
-  def __init__(self):
-    def relation(seq, target):
-      return seq[target - 1] + seq[target - 2]
-
-    super().__init__(relation, [1, 1])
-
-class Subtract(Relation):
-  """A sequence similar to fibonacci, but where the previous values are
-  subtracted instead of added.
-  """
-  def __init__(self):
-    def relation(seq, target):
-      return seq[target - 1] - seq[target - 2]
-
-    super().__init__(relation, [1, 1])
-
-class Random(Relation):
-  """A random sequence based around a fibonacci style recurrence relation."""
-  def __init__(self):
-    def relation(seq, target):
-      return seq[target - 1] + (1 if coinflip() else -1) * seq[target - 2]
-
-    super().__init__(relation, [1, 1])
