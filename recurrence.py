@@ -1,6 +1,6 @@
 from coinflip import coinflip
 
-class Recurrence:
+class Relation:
   """A recurrence relation based sequence
   
   Args:
@@ -25,7 +25,7 @@ class Recurrence:
 
     return self._memo[index]
 
-class Original(Recurrence):
+class Original(Relation):
   """The original fibonacci sequence."""
   def __init__(self):
     def relation(seq, target):
@@ -33,7 +33,7 @@ class Original(Recurrence):
 
     super().__init__(relation, [1, 1])
 
-class Subtract(Recurrence):
+class Subtract(Relation):
   """A sequence similar to fibonacci, but where the previous values are
   subtracted instead of added.
   """
@@ -43,7 +43,7 @@ class Subtract(Recurrence):
 
     super().__init__(relation, [1, 1])
 
-class Random(Recurrence):
+class Random(Relation):
   """A random sequence based around a fibonacci style recurrence relation."""
   def __init__(self):
     def relation(seq, target):
