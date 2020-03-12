@@ -1,10 +1,13 @@
 import random
 
-def coinflip(probabilityOfHeads: float = .5) -> bool:
+def randomBool(probabilityOfTrue: float = .5) -> bool:
+  """Return a random bool"""
+  return random.uniform(0, 1) < probabilityOfTrue
+
+def coinflip(probabilityOfHeads: float = .5) -> str:
   """Flip a (fair by default) coin.
 
   Returns:
-    bool: true for heads, false for tails.
+    str: heads or tails.
   """
-  return random.uniform(0, 1) < probabilityOfHeads
-
+  return 'heads' if randomBool(probabilityOfHeads) else 'tails'
